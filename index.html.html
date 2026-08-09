@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Felinto Seguros Corretora — cotação 100% digital para Auto, Moto, Residencial e Vida. Compare 13+ seguradoras e contrate sem sair de casa."/>
+<title>Felinto Seguros Corretora | Cotação Online Grátis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+/* ══════════════════════════════════════
+   TOKENS
+══════════════════════════════════════ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --brown:    #9c7c5a;   /* bege-terroso principal */
+  --brown-d:  #7a5f41;   /* dark */
+  --brown-l:  #f5f0ea;   /* fundo bege clarinho */
+  --brown-m:  #e8ddd0;   /* bege médio */
+  --brown-btn:#b8956e;   /* botão CTA bege */
+  --brown-btn-h:#9c7c5a;
+  --text:     #2b2219;
+  --text2:    #5a4a38;
+  --muted:    #9a8a7a;
+  --white:    #ffffff;
+  --border:   #e0d5c8;
+  --green-wa: #25d366;
+  --r:        12px;
+  --r-lg:     18px;
+  --shadow-sm:0 2px 8px rgba(0,0,0,.07);
+  --shadow:   0 6px 24px rgba(0,0,0,.10);
+  --shadow-lg:0 16px 48px rgba(0,0,0,.13);
+  --tr:       .22s ease;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Montserrat',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit;cursor:pointer}
+input,select{font-family:inherit}
+
+/* ══════════════════════════════════════
+   NAVBAR
+══════════════════════════════════════ */
+.navbar{
+  position:sticky;top:0;z-index:300;
+  background:#fff;
+  box-shadow:0 1px 0 var(--border);
+  height:72px;display:flex;align-items:center;
+}
+.nav-inner{
+  max-width:1200px;margin:0 auto;padding:0 32px;
+  display:flex;align-items:center;justify-content:space-between;width:100%;
+}
+
+/* LOGO SVG — fiel ao modelo das imagens */
+.logo-wrap{display:flex;align-items:center;gap:11px;text-decoration:none}
+.logo-icon{width:48px;height:48px;flex-shrink:0}
+.logo-text-wrap{line-height:1}
+.logo-name{font-size:1rem;font-weight:800;letter-spacing:.06em;color:var(--text);text-transform:uppercase}
+.logo-sub{font-size:.6rem;font-weight:500;letter-spacing:.18em;color:var(--brown);text-transform:uppercase;margin-top:2px}
+
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none}
+.nav-links a{font-size:.85rem;font-weight:600;color:var(--text2);transition:color var(--tr)}
+.nav-links a:hover{color:var(--brown)}
+.nav-dropdown{position:relative}
+.nav-dropdown > a::after{content:' ▾';font-size:.6rem}
+.dropdown-menu{
+  display:none;position:absolute;top:calc(100% + 10px);left:0;
+  background:#fff;border:1px solid var(--border);border-radius:var(--r);
+  padding:8px 0;min-width:170px;box-shadow:var(--shadow);
+}
+.nav-dropdown:hover .dropdown-menu{display:block}
+.dropdown-menu a{display:block;padding:9px 18px;font-size:.83rem;font-weight:600;color:var(--text2);transition:background var(--tr)}
+.dropdown-menu a:hover{background:var(--brown-l);color:var(--brown)}
+
+.nav-cta{
+  background:var(--brown-btn);color:#fff;font-size:.82rem;font-weight:700;
+  padding:10px 22px;border-radius:6px;border:none;letter-spacing:.03em;
+  transition:background var(--tr),transform var(--tr);
+}
+.nav-cta:hover{background:var(--brown-btn-h);transform:translateY(-1px)}
+
+.hamburger{display:none;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:23px;height:2px;background:var(--text);border-radius:2px;margin:5px 0;transition:.3s}
+
+/* ══════════════════════════════════════
+   HERO
+══════════════════════════════════════ */
+.hero{
+  background:var(--brown-l);
+  min-height:480px;
+  display:grid;grid-template-columns:1fr 1fr;
+  align-items:center;
+  position:relative;overflow:hidden;
+}
+/* fundo bege com textura sutil */
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 60% 80% at 70% 50%,rgba(184,149,110,.12) 0%,transparent 70%),
+    radial-gradient(ellipse 30% 40% at 10% 80%,rgba(156,124,90,.08) 0%,transparent 60%);
+}
+.hero-content{
+  padding:80px 0 80px 64px;
+  position:relative;z-index:1;
+  max-width:540px;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:7px;
+  background:rgba(156,124,90,.12);border:1px solid rgba(156,124,90,.25);
+  border-radius:50px;padding:5px 14px;margin-bottom:22px;
+}
+.hero-badge span{font-size:.7rem;font-weight:700;color:var(--brown);letter-spacing:.09em;text-transform:uppercase}
+.hero h1{
+  font-size:clamp(1.85rem,3.5vw,2.75rem);font-weight:800;
+  color:var(--text);line-height:1.2;margin-bottom:18px;
+}
+.hero h1 strong{color:var(--brown);font-weight:900}
+.hero-sub{font-size:.95rem;color:var(--text2);line-height:1.7;margin-bottom:34px;font-weight:500}
+.btn-hero-wa{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--brown-btn);color:#fff;font-weight:700;font-size:.92rem;
+  padding:15px 30px;border-radius:6px;border:none;letter-spacing:.04em;text-transform:uppercase;
+  box-shadow:0 6px 20px rgba(156,124,90,.35);
+  transition:background var(--tr),transform var(--tr);cursor:pointer;
+}
+.btn-hero-wa:hover{background:var(--brown-btn-h);transform:translateY(-2px)}
+.btn-hero-wa svg{width:20px;height:20px;fill:#fff;flex-shrink:0}
+
+.hero-image{
+  height:100%;min-height:480px;
+  background:url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80') center/cover no-repeat;
+  position:relative;
+}
+.hero-image::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:120px;
+  background:linear-gradient(90deg,var(--brown-l),transparent);
+}
+
+/* ══════════════════════════════════════
+   SEÇÕES GENÉRICAS
+══════════════════════════════════════ */
+.section{padding:80px 0}
+.container{max-width:1200px;margin:0 auto;padding:0 32px}
+.section-title{
+  text-align:center;font-size:clamp(1.1rem,2vw,1.3rem);
+  font-weight:800;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--text);margin-bottom:48px;
+}
+.section-title::after{
+  content:'';display:block;width:50px;height:3px;
+  background:var(--brown);border-radius:2px;margin:10px auto 0;
+}
+
+/* ══════════════════════════════════════
+   NOSSAS SOLUÇÕES
+══════════════════════════════════════ */
+.solucoes{background:var(--brown-l)}
+.solucoes-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.sol-card{
+  background:#fff;border-radius:var(--r-lg);padding:36px 24px 30px;
+  text-align:center;border:1px solid var(--border);
+  transition:box-shadow var(--tr),transform var(--tr),border-color var(--tr);
+}
+.sol-card:hover{box-shadow:var(--shadow);transform:translateY(-5px);border-color:var(--brown-m)}
+
+/* ícones lineares bege — fiel ao modelo */
+.sol-icon{
+  width:80px;height:80px;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;
+}
+.sol-icon svg{width:72px;height:72px}
+
+.sol-card h3{
+  font-size:.85rem;font-weight:800;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--text);margin-bottom:10px;
+}
+.sol-card p{font-size:.82rem;color:var(--muted);line-height:1.65;font-weight:500;margin-bottom:16px}
+.sol-link{font-size:.8rem;font-weight:700;color:var(--brown);transition:color var(--tr)}
+.sol-card:hover .sol-link{color:var(--brown-d)}
+
+/* ══════════════════════════════════════
+   COMO FUNCIONA
+══════════════════════════════════════ */
+.como{background:#fff}
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.step-card{
+  text-align:center;padding:36px 24px;
+  background:var(--brown-l);border-radius:var(--r-lg);
+  border:1px solid var(--border);
+  transition:box-shadow var(--tr),transform var(--tr);
+}
+.step-card:hover{box-shadow:var(--shadow);transform:translateY(-4px)}
+.step-num{
+  width:46px;height:46px;border-radius:50%;
+  background:var(--brown-btn);display:grid;place-items:center;
+  font-size:1.1rem;font-weight:800;color:#fff;
+  margin:0 auto 18px;
+}
+.step-card h4{font-size:.9rem;font-weight:800;color:var(--text);margin-bottom:8px;text-transform:uppercase;letter-spacing:.05em}
+.step-card p{font-size:.83rem;color:var(--text2);line-height:1.65;font-weight:500}
+
+/* ══════════════════════════════════════
+   DIFERENCIAIS
+══════════════════════════════════════ */
+.diferenciais{background:var(--brown-l)}
+.dif-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.dif-card{
+  background:#fff;border-radius:var(--r-lg);padding:32px 26px;
+  border:1px solid var(--border);
+  display:flex;gap:18px;align-items:flex-start;
+  transition:box-shadow var(--tr),border-color var(--tr);
+}
+.dif-card:hover{box-shadow:var(--shadow);border-color:var(--brown-m)}
+.dif-icon{
+  width:50px;height:50px;border-radius:12px;flex-shrink:0;
+  background:var(--brown-l);border:1.5px solid var(--border);
+  display:grid;place-items:center;
+}
+.dif-icon svg{width:26px;height:26px;stroke:var(--brown);fill:none;stroke-width:1.7}
+.dif-card h4{font-size:.9rem;font-weight:800;color:var(--text);margin-bottom:6px}
+.dif-card p{font-size:.82rem;color:var(--muted);line-height:1.6;font-weight:500}
+
+/* ══════════════════════════════════════
+   PARCEIROS (SEGURADORAS)
+══════════════════════════════════════ */
+.parceiros{background:#fff}
+.parceiros-grid{
+  display:flex;flex-wrap:wrap;gap:12px;justify-content:center;
+  margin-top:0;
+}
+.parceiro-badge{
+  display:flex;align-items:center;justify-content:center;
+  padding:12px 28px;border:1.5px solid var(--border);border-radius:8px;
+  font-size:.83rem;font-weight:700;color:var(--text2);
+  background:#fff;transition:border-color var(--tr),background var(--tr),color var(--tr);
+  min-width:140px;
+}
+.parceiro-badge:hover{border-color:var(--brown);background:var(--brown-l);color:var(--brown-d)}
+
+/* ══════════════════════════════════════
+   CTA FINAL
+══════════════════════════════════════ */
+.cta-final{
+  background:var(--brown);
+  padding:80px 32px;text-align:center;position:relative;overflow:hidden;
+}
+.cta-final::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 70% at 50% 50%,rgba(255,255,255,.06) 0%,transparent 70%);
+}
+.cta-final h2{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;color:#fff;margin-bottom:12px;position:relative}
+.cta-final p{color:rgba(255,255,255,.75);font-size:.95rem;margin-bottom:32px;line-height:1.7;position:relative}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative}
+.btn-wa-final{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--green-wa);color:#fff;font-weight:800;font-size:.95rem;
+  padding:15px 32px;border-radius:6px;border:none;letter-spacing:.04em;text-transform:uppercase;
+  box-shadow:0 8px 24px rgba(0,0,0,.2);
+  transition:background var(--tr),transform var(--tr);cursor:pointer;
+}
+.btn-wa-final:hover{background:#1db954;transform:translateY(-2px)}
+.btn-wa-final svg{width:20px;height:20px;fill:#fff}
+.btn-tel-final{
+  display:inline-flex;align-items:center;gap:8px;
+  border:2px solid rgba(255,255,255,.45);color:#fff;font-weight:700;font-size:.9rem;
+  padding:15px 28px;border-radius:6px;background:none;
+  transition:border-color var(--tr),background var(--tr);cursor:pointer;
+}
+.btn-tel-final:hover{border-color:#fff;background:rgba(255,255,255,.1)}
+
+/* ══════════════════════════════════════
+   FOOTER
+══════════════════════════════════════ */
+footer{background:#1a110a;color:rgba(255,255,255,.5);padding:56px 0 28px}
+.footer-grid{
+  max-width:1200px;margin:0 auto;padding:0 32px;
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px;
+}
+.footer-brand-text{font-size:.85rem;line-height:1.75;margin-top:16px;max-width:280px}
+.footer-legal{
+  margin-top:18px;font-size:.71rem;line-height:1.9;
+  background:rgba(255,255,255,.04);border-radius:8px;padding:14px;
+  border:1px solid rgba(255,255,255,.07);
+}
+.footer-legal strong{color:rgba(255,255,255,.65)}
+.footer-col h5{font-size:.72rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:#fff;margin-bottom:16px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-col a{font-size:.83rem;transition:color var(--tr)}
+.footer-col a:hover{color:#fff}
+.footer-bottom-bar{
+  max-width:1200px;margin:0 auto;padding:22px 32px 0;
+  border-top:1px solid rgba(255,255,255,.07);
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:.75rem;
+}
+.susep-pill{
+  background:rgba(156,124,90,.2);border:1px solid rgba(156,124,90,.3);
+  color:var(--brown-btn);padding:5px 14px;border-radius:50px;font-size:.7rem;font-weight:700;
+}
+
+/* ══════════════════════════════════════
+   WHATSAPP FLUTUANTE
+══════════════════════════════════════ */
+.wa-float{position:fixed;bottom:26px;right:26px;z-index:500;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.wa-tip{
+  background:#1a110a;color:#fff;font-size:.78rem;font-weight:600;
+  padding:7px 13px;border-radius:8px;box-shadow:var(--shadow);white-space:nowrap;
+  animation:tipAnim 5s ease 1.5s both;
+}
+@keyframes tipAnim{0%{opacity:0;transform:translateX(8px)}15%{opacity:1;transform:none}85%{opacity:1}100%{opacity:0}}
+.wa-fab{
+  width:56px;height:56px;border-radius:50%;
+  background:var(--green-wa);display:grid;place-items:center;
+  box-shadow:0 6px 22px rgba(37,211,102,.4);
+  transition:transform var(--tr),box-shadow var(--tr);
+}
+.wa-fab:hover{transform:scale(1.1);box-shadow:0 10px 30px rgba(37,211,102,.5)}
+.wa-fab svg{width:28px;height:28px;fill:#fff}
+
+/* ══════════════════════════════════════
+   MODAL MULTI-STEP
+══════════════════════════════════════ */
+.overlay{
+  position:fixed;inset:0;z-index:1000;
+  background:rgba(26,17,10,.72);backdrop-filter:blur(8px);
+  display:none;align-items:center;justify-content:center;padding:20px;
+}
+.overlay.on{display:flex}
+.modal{
+  background:#fff;border-radius:var(--r-lg);width:100%;max-width:510px;
+  padding:38px 36px;position:relative;max-height:92vh;overflow-y:auto;
+  box-shadow:0 24px 80px rgba(0,0,0,.28);animation:mIn .28s ease;
+}
+@keyframes mIn{from{opacity:0;transform:scale(.96) translateY(12px)}to{opacity:1;transform:none}}
+.modal-x{
+  position:absolute;top:16px;right:16px;width:34px;height:34px;
+  border-radius:50%;border:none;background:var(--brown-l);cursor:pointer;
+  display:grid;place-items:center;font-size:1rem;color:var(--muted);
+  transition:background var(--tr);
+}
+.modal-x:hover{background:var(--border)}
+
+/* progress */
+.prog-wrap{margin-bottom:26px}
+.prog-track{height:4px;background:var(--border);border-radius:2px;overflow:hidden;margin-top:8px}
+.prog-fill{height:100%;background:linear-gradient(90deg,var(--brown-btn),var(--brown));border-radius:2px;transition:width .38s ease}
+.prog-labels{display:flex;justify-content:space-between;margin-top:6px}
+.prog-labels span{font-size:.66rem;font-weight:700;color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
+.prog-labels span.on{color:var(--brown)}
+
+/* steps */
+.mstep{display:none}.mstep.on{display:block}
+.mstep-hd{margin-bottom:22px}
+.mstep-hd h3{font-size:1.2rem;font-weight:800;color:var(--text);margin-bottom:4px}
+.mstep-hd p{font-size:.84rem;color:var(--muted);font-weight:500}
+
+/* fields */
+.field{margin-bottom:16px}
+.field label{display:block;font-size:.78rem;font-weight:700;color:var(--text);margin-bottom:5px;letter-spacing:.03em}
+.field input,.field select{
+  width:100%;height:46px;padding:0 13px;
+  border:1.5px solid var(--border);border-radius:8px;
+  font-size:.88rem;color:var(--text);background:#fff;
+  outline:none;transition:border-color var(--tr);font-family:'Montserrat',sans-serif;
+}
+.field input:focus,.field select:focus{border-color:var(--brown)}
+.field input::placeholder{color:#c4b8a8}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+
+/* chips */
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{
+  padding:8px 16px;border-radius:50px;
+  border:1.5px solid var(--border);background:#fff;
+  font-size:.8rem;font-weight:700;color:var(--muted);cursor:pointer;
+  transition:all var(--tr);font-family:'Montserrat',sans-serif;
+}
+.chip.on,.chip:hover{border-color:var(--brown);background:var(--brown-l);color:var(--brown-d)}
+
+.btn-next{
+  width:100%;height:48px;border-radius:8px;border:none;margin-top:6px;
+  background:var(--brown-btn);color:#fff;font-size:.9rem;font-weight:800;
+  letter-spacing:.04em;text-transform:uppercase;
+  box-shadow:0 5px 16px rgba(156,124,90,.3);
+  transition:background var(--tr),transform var(--tr);
+}
+.btn-next:hover{background:var(--brown-btn-h);transform:translateY(-1px)}
+.btn-back{
+  width:100%;height:42px;border-radius:8px;border:1.5px solid var(--border);
+  background:none;color:var(--muted);font-size:.85rem;font-weight:700;margin-top:8px;
+  transition:border-color var(--tr),color var(--tr);font-family:'Montserrat',sans-serif;
+}
+.btn-back:hover{border-color:var(--brown);color:var(--brown)}
+
+/* success */
+.success{text-align:center;padding:8px 0}
+.success-icon{
+  width:68px;height:68px;border-radius:50%;
+  background:linear-gradient(135deg,var(--brown-btn),var(--brown-d));
+  display:grid;place-items:center;margin:0 auto 18px;
+}
+.success-icon svg{width:34px;height:34px;stroke:#fff;fill:none;stroke-width:2.5}
+.success h3{font-size:1.25rem;font-weight:800;color:var(--text);margin-bottom:8px}
+.success p{font-size:.87rem;color:var(--muted);line-height:1.7;margin-bottom:22px;font-weight:500}
+.load-bar{height:5px;background:var(--border);border-radius:3px;overflow:hidden;margin-bottom:10px}
+.load-fill{height:100%;background:linear-gradient(90deg,var(--brown-btn),var(--brown));animation:lf 3s ease forwards}
+@keyframes lf{from{width:0}to{width:100%}}
+.load-lbl{font-size:.77rem;color:var(--muted);font-weight:600}
+.btn-wa-modal{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  background:var(--green-wa);color:#fff;font-weight:800;font-size:.9rem;
+  padding:14px;border-radius:8px;border:none;width:100%;margin-top:18px;
+  transition:background var(--tr);cursor:pointer;letter-spacing:.03em;text-transform:uppercase;
+}
+.btn-wa-modal:hover{background:#1db954}
+.btn-wa-modal svg{width:20px;height:20px;fill:#fff}
+
+/* ══════════════════════════════════════
+   REVEAL
+══════════════════════════════════════ */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ══════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════ */
+@media(max-width:1024px){
+  .solucoes-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:860px){
+  .hero{grid-template-columns:1fr}
+  .hero-image{display:none}
+  .hero-content{padding:64px 32px;max-width:100%}
+  .dif-grid{grid-template-columns:1fr}
+  .steps-grid{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  .nav-links,.nav-cta{display:none}
+  .hamburger{display:block}
+  .solucoes-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr}
+  .cta-btns{flex-direction:column;align-items:center}
+  .modal{padding:26px 18px}
+  .frow{grid-template-columns:1fr}
+}
+@media(max-width:440px){
+  .solucoes-grid{grid-template-columns:1fr}
+}
+
+/* mobile nav drawer */
+.mob-nav{
+  display:none;position:fixed;top:72px;left:0;right:0;bottom:0;
+  background:#fff;z-index:200;padding:28px 24px;
+  flex-direction:column;gap:20px;
+}
+.mob-nav.open{display:flex}
+.mob-nav a{font-size:1.05rem;font-weight:700;color:var(--text2);border-bottom:1px solid var(--border);padding-bottom:14px}
+.mob-nav button{height:48px;border-radius:6px;font-size:.95rem}
+</style>
+</head>
+<body>
+
+<!-- ████ NAVBAR ████ -->
+<nav class="navbar">
+  <div class="nav-inner">
+
+    <!-- LOGO — replica o estilo das imagens de referência -->
+    <a href="#" class="logo-wrap">
+      <svg class="logo-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- casa / telhado -->
+        <path d="M6 22L24 7L42 22" stroke="#9c7c5a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- parede esquerda -->
+        <rect x="8" y="22" width="9" height="14" rx="1" stroke="#9c7c5a" stroke-width="2" fill="none"/>
+        <!-- prédio central -->
+        <rect x="19" y="14" width="10" height="22" rx="1" stroke="#9c7c5a" stroke-width="2" fill="none"/>
+        <!-- janelas prédio -->
+        <rect x="21" y="17" width="3" height="3" rx=".5" fill="#9c7c5a" opacity=".5"/>
+        <rect x="26" y="17" width="3" height="3" rx=".5" fill="#9c7c5a" opacity=".5"/>
+        <rect x="21" y="22" width="3" height="3" rx=".5" fill="#9c7c5a" opacity=".5"/>
+        <rect x="26" y="22" width="3" height="3" rx=".5" fill="#9c7c5a" opacity=".5"/>
+        <!-- prédio direito -->
+        <rect x="31" y="19" width="9" height="17" rx="1" stroke="#9c7c5a" stroke-width="2" fill="none"/>
+        <!-- arcos / base decorativa -->
+        <path d="M4 36 Q12 30 24 34 Q36 38 44 32" stroke="#9c7c5a" stroke-width="1.8" stroke-linecap="round" fill="none" opacity=".55"/>
+        <path d="M4 40 Q12 34 24 38 Q36 42 44 36" stroke="#9c7c5a" stroke-width="1.4" stroke-linecap="round" fill="none" opacity=".35"/>
+      </svg>
+      <div class="logo-text-wrap">
+        <div class="logo-name">Felinto Seguros</div>
+        <div class="logo-sub">Corretora</div>
+      </div>
+    </a>
+
+    <ul class="nav-links">
+      <li class="nav-dropdown">
+        <a href="#seguros">Seguros ▾</a>
+        <div class="dropdown-menu">
+          <a href="#seguros" onclick="openModal('auto')">Seguro Auto</a>
+          <a href="#seguros" onclick="openModal('moto')">Seguro Moto</a>
+          <a href="#seguros" onclick="openModal('residencial')">Seguro Residencial</a>
+          <a href="#seguros" onclick="openModal('vida')">Seguro de Vida</a>
+        </div>
+      </li>
+      <li><a href="#quem-somos">Quem Somos</a></li>
+      <li><a href="#contato">Contato</a></li>
+      <li><a href="https://wa.me/5511932271327" target="_blank">Sinistros</a></li>
+    </ul>
+    <button class="nav-cta" onclick="openModal('auto')">Fazer Cotação Grátis</button>
+    <button class="hamburger" onclick="toggleMob()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mob-nav" id="mobNav">
+  <a href="#seguros" onclick="toggleMob()">Seguros</a>
+  <a href="#quem-somos" onclick="toggleMob()">Quem Somos</a>
+  <a href="#contato" onclick="toggleMob()">Contato</a>
+  <a href="https://wa.me/5511932271327" target="_blank">Sinistros</a>
+  <button class="btn-next" onclick="toggleMob();openModal('auto')">Fazer Cotação Grátis</button>
+</div>
+
+<!-- ████ HERO ████ -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge"><span>✦ Atendimento 100% Digital</span></div>
+    <h1>Proteção sob medida<br>para o seu mundo.<br><strong>Simule sua cotação hoje.</strong></h1>
+    <p class="hero-sub">Compare as melhores ofertas de 13+ seguradoras e contrate sem sair de casa — rápido, simples e sem burocracia.</p>
+    <button class="btn-hero-wa" onclick="openModal('auto')">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Fazer Cotação no WhatsApp
+    </button>
+  </div>
+  <div class="hero-image"></div>
+</section>
+
+<!-- ████ NOSSAS SOLUÇÕES ████ -->
+<section class="section solucoes" id="seguros">
+  <div class="container">
+    <h2 class="section-title reveal">Nossas Soluções</h2>
+    <div class="solucoes-grid">
+
+      <!-- AUTO -->
+      <div class="sol-card reveal" onclick="openModal('auto')" style="cursor:pointer">
+        <div class="sol-icon">
+          <!-- ícone carro linear bege, estilo do modelo -->
+          <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 36 L20 22 Q22 18 27 18 L45 18 Q50 18 52 22 L58 36" stroke="#9c7c5a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="10" y="34" width="52" height="16" rx="5" stroke="#9c7c5a" stroke-width="2.5" fill="none"/>
+            <circle cx="22" cy="52" r="5" stroke="#9c7c5a" stroke-width="2.5" fill="none"/>
+            <circle cx="50" cy="52" r="5" stroke="#9c7c5a" stroke-width="2.5" fill="none"/>
+            <path d="M27 52 L45 52" stroke="#9c7c5a" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M10 42 L62 42" stroke="#9c7c5a" stroke-width="2" stroke-linecap="round" opacity=".4"/>
+            <path d="M24 28 L48 28" stroke="#9c7c5a" stroke-width="2" stroke-linecap="round" opacity=".4"/>
+          </svg>
+        </div>
+        <h3>Auto</h3>
+        <p>Proteção completa para o seu carro. Cobertura contra colisão, roubo, furto, incêndio e assistência 24h.</p>
+        <span class="sol-link">Saiba Mais →</span>
+      </div>
+
+      <!-- MOTO -->
+      <div class="sol-card reveal" onclick="openModal('moto')" style="cursor:pointer">
+        <div class="sol-icon">
+          <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- roda traseira -->
+            <circle cx="20" cy="50" r="10" stroke="#9c7c5a" stroke-width="2.5" fill="none"/>
+            <!-- roda dianteira -->
+            <circle cx="54" cy="50" r="10" stroke="#9c7c5a" stroke-width="2.5" fill="none"/>
+            <!-- guidão -->
+            <path d="M54 40 L54 30 L60 24" stroke="#9c7c5a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- banco / corpo -->
+            <path d="M20 40 L32 24 L46 24 L54 40" stroke="#9c7c5a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- motor -->
+            <path d="M28 40 L44 40" stroke="#9c7c5a" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M32 24 L32 34" stroke="#9c7c5a" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+            <!-- escape -->
+            <path d="M20 46 L12 46 Q8 46 8 42" stroke="#9c7c5a" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+          </svg>
+        </div>
+        <h3>Moto</h3>
+        <p>Seguro especializado para motos de todos os modelos. Roubo, colisão e socorro mecânico onde você estiver.</p>
+        <span class="sol-link">Saiba Mais →</span>
+      </div>
+
+      <!-- RESIDENCIAL -->
+      <div class="sol-card reveal" onclick="openModal('residencial')" style="cursor:pointer">
+        <div class="sol-icon">
+          <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- casa -->
+            <path d="M10 34 L36 14 L62 34" stroke="#9c7c5a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M16 30 L16 56 L56 56 L56 30" stroke="#9c7c5a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- porta -->
+            <rect x="30" y="42" width="12" height="14" rx="2" stroke="#9c7c5a" stroke-width="2" fill="none"/>
+            <!-- janela -->
+            <rect x="18" y="36" width="10" height="9" rx="1.5" stroke="#9c7c5a" stroke-width="2" fill="none"/>
+            <!-- chave -->
+            <circle cx="54" cy="22" r="6" stroke="#9c7c5a" stroke-width="2.2" fill="none"/>
+            <path d="M58 26 L65 33 L62 36 L60 34 L58 36 L56 34" stroke="#9c7c5a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Residencial</h3>
+        <p>Sua casa protegida contra incêndio, roubo, danos elétricos, vazamentos e desastres naturais.</p>
+        <span class="sol-link">Saiba Mais →</span>
+      </div>
+
+      <!-- VIDA -->
+      <div class="sol-card reveal" onclick="openModal('vida')" style="cursor:pointer">
+        <div class="sol-icon">
+          <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- mãos / coração nas mãos -->
+            <path d="M22 52 Q14 46 14 36 Q14 26 22 22 Q26 20 30 22" stroke="#9c7c5a" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M50 52 Q58 46 58 36 Q58 26 50 22 Q46 20 42 22" stroke="#9c7c5a" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M22 52 L36 60 L50 52" stroke="#9c7c5a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- coração -->
+            <path d="M28 32 Q28 26 34 26 Q36 26 36 28 Q36 26 38 26 Q44 26 44 32 Q44 38 36 44 Q28 38 28 32Z" stroke="#9c7c5a" stroke-width="2.2" fill="none"/>
+          </svg>
+        </div>
+        <h3>Vida</h3>
+        <p>Garanta o futuro de quem você ama. Indenização por morte, invalidez e doenças graves.</p>
+        <span class="sol-link">Saiba Mais →</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ████ COMO FUNCIONA ████ -->
+<section class="section como" id="como-funciona">
+  <div class="container">
+    <h2 class="section-title reveal">Como Funciona</h2>
+    <div class="steps-grid">
+      <div class="step-card reveal">
+        <div class="step-num">1</div>
+        <h4>Escolha o Seguro</h4>
+        <p>Selecione o produto que você precisa e clique em cotar. Nosso especialista já sabe exatamente o que perguntar.</p>
+      </div>
+      <div class="step-card reveal">
+        <div class="step-num">2</div>
+        <h4>Preencha os Dados</h4>
+        <p>Formulário rápido em 3 etapas. Menos de 2 minutos para capturar tudo que precisamos para buscar as melhores ofertas.</p>
+      </div>
+      <div class="step-card reveal">
+        <div class="step-num">3</div>
+        <h4>Receba as Propostas</h4>
+        <p>Comparamos 13+ seguradoras e enviamos as melhores opções para você pelo WhatsApp. Você escolhe e contrata.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ████ DIFERENCIAIS ████ -->
+<section class="section diferenciais" id="quem-somos">
+  <div class="container">
+    <h2 class="section-title reveal">Diferenciais</h2>
+    <div class="dif-grid">
+      <div class="dif-card reveal">
+        <div class="dif-icon">
+          <svg viewBox="0 0 24 24"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        <div>
+          <h4>Cálculo Ágil</h4>
+          <p>Simulação rápida com comparação automática de 13+ seguradoras. Proposta em minutos, sem esperar dias.</p>
+        </div>
+      </div>
+      <div class="dif-card reveal">
+        <div class="dif-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div>
+          <h4>Atendimento 24h</h4>
+          <p>Suporte via WhatsApp disponível para dúvidas, renovações e acionamento de sinistros a qualquer hora.</p>
+        </div>
+      </div>
+      <div class="dif-card reveal">
+        <div class="dif-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        </div>
+        <div>
+          <h4>Suporte Pós-Venda</h4>
+          <p>Estamos ao seu lado no momento do sinistro, orientando e acompanhando todo o processo até a resolução.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ████ PARCEIROS ████ -->
+<section class="section parceiros" id="parceiros">
+  <div class="container">
+    <h2 class="section-title reveal">Parceiros</h2>
+    <div class="parceiros-grid reveal">
+      <div class="parceiro-badge">Akad</div>
+      <div class="parceiro-badge">Allianz</div>
+      <div class="parceiro-badge">Azos</div>
+      <div class="parceiro-badge">Azul Seguros</div>
+      <div class="parceiro-badge">Bradesco Seguros</div>
+      <div class="parceiro-badge">HDI</div>
+      <div class="parceiro-badge">Itaú Seguros</div>
+      <div class="parceiro-badge">Mapfre</div>
+      <div class="parceiro-badge">Mitsui Sumitomo</div>
+      <div class="parceiro-badge">Porto Seguro</div>
+      <div class="parceiro-badge">Suhai</div>
+      <div class="parceiro-badge">Tokio Marine</div>
+      <div class="parceiro-badge">Yelum</div>
+    </div>
+  </div>
+</section>
+
+<!-- ████ CTA FINAL ████ -->
+<section class="cta-final" id="contato">
+  <h2>Pronto para proteger o que mais importa?</h2>
+  <p>Cotação 100% gratuita e sem compromisso. Fale agora com um especialista!</p>
+  <div class="cta-btns">
+    <button class="btn-wa-final" onclick="openModal('auto')">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Fazer Cotação no WhatsApp
+    </button>
+    <a href="tel:11932271327" class="btn-tel-final">
+      📞 (11) 93227-1327
+    </a>
+  </div>
+</section>
+
+<!-- ████ FOOTER ████ -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <!-- Logo branca no footer -->
+      <a href="#" class="logo-wrap" style="display:inline-flex">
+        <svg class="logo-icon" viewBox="0 0 48 48" fill="none">
+          <path d="M6 22L24 7L42 22" stroke="rgba(255,255,255,.6)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="8" y="22" width="9" height="14" rx="1" stroke="rgba(255,255,255,.6)" stroke-width="2" fill="none"/>
+          <rect x="19" y="14" width="10" height="22" rx="1" stroke="rgba(255,255,255,.6)" stroke-width="2" fill="none"/>
+          <rect x="21" y="17" width="3" height="3" rx=".5" fill="rgba(255,255,255,.4)"/>
+          <rect x="26" y="17" width="3" height="3" rx=".5" fill="rgba(255,255,255,.4)"/>
+          <rect x="21" y="22" width="3" height="3" rx=".5" fill="rgba(255,255,255,.4)"/>
+          <rect x="26" y="22" width="3" height="3" rx=".5" fill="rgba(255,255,255,.4)"/>
+          <rect x="31" y="19" width="9" height="17" rx="1" stroke="rgba(255,255,255,.6)" stroke-width="2" fill="none"/>
+          <path d="M4 36 Q12 30 24 34 Q36 38 44 32" stroke="rgba(255,255,255,.35)" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+          <path d="M4 40 Q12 34 24 38 Q36 42 44 36" stroke="rgba(255,255,255,.2)" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+        </svg>
+        <div class="logo-text-wrap">
+          <div class="logo-name" style="color:#fff">Felinto Seguros</div>
+          <div class="logo-sub">Corretora</div>
+        </div>
+      </a>
+      <p class="footer-brand-text">Corretora de seguros independente com atendimento 100% digital. Trabalhamos para encontrar a melhor proteção pelo menor preço.</p>
+      <div class="footer-legal">
+        <strong>Informações Legais</strong><br/>
+        Felinto Corretora de Seguros Ltda.<br/>
+        CNPJ: XX.XXX.XXX/0001-XX<br/>
+        Registro SUSEP: XXXXXXX<br/>
+        Corretora devidamente habilitada nos termos da Resolução CNSP nº 382/2020.<br/>
+        <a href="#" style="color:rgba(255,255,255,.45)">Política de Privacidade</a> · <a href="#" style="color:rgba(255,255,255,.45)">Termos de Uso</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Seguros</h5>
+      <ul>
+        <li><a href="#seguros">Seguro Auto</a></li>
+        <li><a href="#seguros">Seguro Moto</a></li>
+        <li><a href="#seguros">Seguro Residencial</a></li>
+        <li><a href="#seguros">Seguro de Vida</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Empresa</h5>
+      <ul>
+        <li><a href="#quem-somos">Quem Somos</a></li>
+        <li><a href="#como-funciona">Como Funciona</a></li>
+        <li><a href="#parceiros">Seguradoras Parceiras</a></li>
+        <li><a href="https://wa.me/5511932271327" target="_blank">Sinistros</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contato</h5>
+      <ul>
+        <li><a href="tel:11932271327">(11) 93227-1327</a></li>
+        <li><a href="https://wa.me/5511932271327" target="_blank">WhatsApp</a></li>
+        <li><a href="mailto:contato@felintoseguros.com.br">contato@felintoseguros.com.br</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom-bar">
+    <span>© 2025 Felinto Seguros Corretora. Todos os direitos reservados.</span>
+    <span class="susep-pill">✓ Registrado na SUSEP</span>
+  </div>
+</footer>
+
+<!-- ████ WHATSAPP FLUTUANTE ████ -->
+<div class="wa-float">
+  <div class="wa-tip">Fale conosco agora! 💬</div>
+  <a href="https://wa.me/5511932271327" target="_blank" class="wa-fab" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</div>
+
+<!-- ████ MODAL MULTI-STEP FORM ████ -->
+<div class="overlay" id="overlay" onclick="overlayClick(event)">
+  <div class="modal" role="dialog" aria-modal="true">
+    <button class="modal-x" onclick="closeModal()">✕</button>
+
+    <!-- barra de progresso -->
+    <div class="prog-wrap" id="progWrap">
+      <div class="prog-track"><div class="prog-fill" id="progFill" style="width:33%"></div></div>
+      <div class="prog-labels">
+        <span class="on" id="lbl1">1. Contato</span>
+        <span id="lbl2">2. Dados</span>
+        <span id="lbl3">3. Pronto!</span>
+      </div>
+    </div>
+
+    <!-- STEP 1 — contato -->
+    <div class="mstep on" id="ms1">
+      <div class="mstep-hd">
+        <h3>Seus dados de contato</h3>
+        <p>Garantimos sua cotação mesmo se você precisar sair agora.</p>
+      </div>
+      <div class="field">
+        <label>Nome completo *</label>
+        <input type="text" id="f_nome" placeholder="Ex: João Silva" autocomplete="name"/>
+      </div>
+      <div class="frow">
+        <div class="field">
+          <label>WhatsApp / Telefone *</label>
+          <input type="tel" id="f_tel" placeholder="(11) 99999-9999"/>
+        </div>
+        <div class="field">
+          <label>E-mail *</label>
+          <input type="email" id="f_email" placeholder="seu@email.com"/>
+        </div>
+      </div>
+      <button class="btn-next" onclick="goStep(2)">Próximo →</button>
+    </div>
+
+    <!-- STEP 2 — dados do bem -->
+    <div class="mstep" id="ms2">
+      <div class="mstep-hd">
+        <h3 id="ms2title">Dados do veículo</h3>
+        <p id="ms2sub">Informações básicas para personalizar sua cotação.</p>
+      </div>
+
+      <div id="fauto">
+        <div class="field"><label>Marca e Modelo do Carro *</label><input type="text" placeholder="Ex: Honda Civic 2022"/></div>
+        <div class="frow">
+          <div class="field"><label>Ano de Fabricação *</label><input type="text" placeholder="2022" maxlength="4"/></div>
+          <div class="field"><label>CEP de Pernoite *</label><input type="text" id="f_cep" placeholder="00000-000" maxlength="9"/></div>
+        </div>
+        <div class="field"><label>Possui rastreador?</label>
+          <div class="chips">
+            <div class="chip on" onclick="pick(this,'rt')">Sim</div>
+            <div class="chip" onclick="pick(this,'rt')">Não</div>
+            <div class="chip" onclick="pick(this,'rt')">Não sei</div>
+          </div>
+        </div>
+        <div class="field"><label>Veículo financiado?</label>
+          <div class="chips">
+            <div class="chip on" onclick="pick(this,'fn')">Não</div>
+            <div class="chip" onclick="pick(this,'fn')">Sim</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="fmoto" style="display:none">
+        <div class="field"><label>Marca e Modelo da Moto *</label><input type="text" placeholder="Ex: Honda CG 160 2023"/></div>
+        <div class="frow">
+          <div class="field"><label>Ano *</label><input type="text" placeholder="2023" maxlength="4"/></div>
+          <div class="field"><label>CEP de Pernoite *</label><input type="text" placeholder="00000-000" maxlength="9"/></div>
+        </div>
+        <div class="field"><label>Possui rastreador?</label>
+          <div class="chips">
+            <div class="chip on" onclick="pick(this,'rtm')">Não</div>
+            <div class="chip" onclick="pick(this,'rtm')">Sim</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="fres" style="display:none">
+        <div class="field"><label>Tipo de Imóvel *</label>
+          <div class="chips">
+            <div class="chip on" onclick="pick(this,'im')">Casa</div>
+            <div class="chip" onclick="pick(this,'im')">Apartamento</div>
+          </div>
+        </div>
+        <div class="frow">
+          <div class="field"><label>CEP do Imóvel *</label><input type="text" placeholder="00000-000" maxlength="9"/></div>
+          <div class="field"><label>Valor aproximado</label><input type="text" placeholder="R$ 300.000"/></div>
+        </div>
+        <div class="field"><label>Situação do imóvel</label>
+          <div class="chips">
+            <div class="chip on" onclick="pick(this,'si')">Próprio</div>
+            <div class="chip" onclick="pick(this,'si')">Alugado</div>
+            <div class="chip" onclick="pick(this,'si')">Financiado</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="fvida" style="display:none">
+        <div class="field"><label>Data de Nascimento *</label><input type="date"/></div>
+        <div class="field"><label>É fumante?</label>
+          <div class="chips">
+            <div class="chip on" onclick="pick(this,'fu')">Não</div>
+            <div class="chip" onclick="pick(this,'fu')">Sim</div>
+          </div>
+        </div>
+        <div class="field"><label>Capital segurado desejado</label>
+          <select>
+            <option>Até R$ 100.000</option>
+            <option>R$ 100.001 a R$ 300.000</option>
+            <option>R$ 300.001 a R$ 500.000</option>
+            <option>Acima de R$ 500.000</option>
+          </select>
+        </div>
+      </div>
+
+      <button class="btn-next" onclick="goStep(3)">Receber Cotação →</button>
+      <button class="btn-back" onclick="goStep(1)">← Voltar</button>
+    </div>
+
+    <!-- STEP 3 — sucesso -->
+    <div class="mstep" id="ms3">
+      <div class="success">
+        <div class="success-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <h3>Cotação enviada com sucesso! 🎉</h3>
+        <p>Nossa equipe já está comparando as melhores ofertas de 13+ seguradoras para você. Em breve entraremos em contato!</p>
+        <div class="load-bar"><div class="load-fill"></div></div>
+        <div class="load-lbl" id="loadLbl">Comparando seguradoras...</div>
+        <a href="https://wa.me/5511932271327" target="_blank">
+          <button class="btn-wa-modal" style="margin-top:18px">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Acompanhar pelo WhatsApp
+          </button>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+/* ── produto selecionado ── */
+let produto = 'auto';
+
+/* ── modal ── */
+function openModal(tipo) {
+  produto = tipo || produto;
+  document.getElementById('overlay').classList.add('on');
+  document.body.style.overflow = 'hidden';
+  configStep2(produto);
+  goStep(1);
+}
+function closeModal() {
+  document.getElementById('overlay').classList.remove('on');
+  document.body.style.overflow = '';
+}
+function overlayClick(e) {
+  if (e.target === document.getElementById('overlay')) closeModal();
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+/* ── step navigation ── */
+function goStep(n) {
+  if (n === 2) {
+    const nome  = document.getElementById('f_nome').value.trim();
+    const tel   = document.getElementById('f_tel').value.trim();
+    const email = document.getElementById('f_email').value.trim();
+    if (!nome || !tel || !email) {
+      alert('Por favor, preencha nome, telefone e e-mail para continuar.');
+      return;
+    }
+  }
+  ['ms1','ms2','ms3'].forEach((id,i) => {
+    document.getElementById(id).classList.toggle('on', i+1 === n);
+  });
+  const w = {1:'33%',2:'66%',3:'100%'}[n];
+  document.getElementById('progFill').style.width = w;
+  ['lbl1','lbl2','lbl3'].forEach((id,i) => {
+    document.getElementById(id).classList.toggle('on', i+1 === n);
+  });
+  document.getElementById('progWrap').style.display = n === 3 ? 'none' : 'block';
+  if (n === 3) animLoad();
+}
+
+function configStep2(tipo) {
+  const cfg = {
+    auto:       { t:'Dados do veículo',     s:'Informações básicas do seu carro.' },
+    moto:       { t:'Dados da moto',         s:'Modelo e ano da sua motocicleta.' },
+    residencial:{ t:'Dados do imóvel',       s:'Localização e tipo da sua residência.' },
+    vida:       { t:'Dados pessoais',        s:'Para calcular a cobertura ideal.' }
+  };
+  const c = cfg[tipo] || cfg.auto;
+  document.getElementById('ms2title').textContent = c.t;
+  document.getElementById('ms2sub').textContent   = c.s;
+  ['fauto','fmoto','fres','fvida'].forEach(id => document.getElementById(id).style.display='none');
+  const map = {auto:'fauto',moto:'fmoto',residencial:'fres',vida:'fvida'};
+  if (map[tipo]) document.getElementById(map[tipo]).style.display = 'block';
+}
+
+/* ── chips ── */
+function pick(el, group) {
+  el.closest('.chips').querySelectorAll('.chip').forEach(c => c.classList.remove('on'));
+  el.classList.add('on');
+}
+
+/* ── loading labels ── */
+function animLoad() {
+  const msgs = ['Comparando seguradoras...','Analisando seu perfil...','Calculando cobertura ideal...','Quase pronto...','Proposta gerada! ✓'];
+  let i = 0;
+  const el = document.getElementById('loadLbl');
+  const iv = setInterval(() => { if (++i < msgs.length) el.textContent = msgs[i]; else clearInterval(iv); }, 650);
+}
+
+/* ── máscara tel ── */
+document.getElementById('f_tel').addEventListener('input', function() {
+  let v = this.value.replace(/\D/g,'');
+  v = v.replace(/^(\d{2})(\d)/,'($1) $2');
+  v = v.replace(/(\d{5})(\d)/,'$1-$2');
+  this.value = v;
+});
+
+/* ── máscara cep ── */
+const cepEl = document.getElementById('f_cep');
+if (cepEl) cepEl.addEventListener('input', function() {
+  let v = this.value.replace(/\D/g,'');
+  v = v.replace(/(\d{5})(\d)/,'$1-$2');
+  this.value = v;
+});
+
+/* ── nav mobile ── */
+function toggleMob() {
+  document.getElementById('mobNav').classList.toggle('open');
+}
+
+/* ── scroll reveal ── */
+const io = new IntersectionObserver(entries => {
+  entries.forEach((e,i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('in'), i * 75);
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
